@@ -66,5 +66,44 @@ GO
 SET IDENTITY_INSERT Products OFF
 GO
 --orders
+SET IDENTITY_INSERT Orders ON
+GO
 
+INSERT INTO Orders(
+    OrderId,
+    CustomerId,
+    OrderDate,
+    ShipperId,
+    ShipAddress,
+    ShipCity
+)   
+VALUES
+(1, 1, '2023-11-11', 1, N'123 Ngô Quyền', N'Đà Nẵng'),
+(2, 2, '2023-12-12', 2, N'11 Trần Văn Dư', N'Hà Nội'),
+(3, 3, '2023-10-10', 3, N'93 Lý Thái Tổ', N'Tp. Hồ Chí Minh'),
+(4, 4, '2024-01-01', 4, N'32 Minh Mạng', N'Huế'),
+(5, 5, '2023-09-09', 5, N'81 Hải Phòng', N'Đà Nẵng')
+GO
+
+SET IDENTITY_INSERT Orders OFF
+GO
 --order details
+INSERT INTO OrderDetails(
+    OrderId,
+    ProductId,
+    Quantity,
+    UnitPrice,
+    DiscountPercentage
+)
+VALUES
+(1, 1, 1, 1000, 10),
+(1, 2, 2, 800, 5),
+(2, 3, 1, 700, 15),
+(2, 4, 2, 500, 20),
+(3, 5, 3, 200, 0),
+(3, 6, 4, 100, 5),
+(4, 7, 2, 300, 10),
+(4, 8, 3, 400, 15),
+(5, 9, 4, 500, 30),
+(5, 10, 5, 600, 40)
+GO
